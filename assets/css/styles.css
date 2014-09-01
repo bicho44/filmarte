@@ -3460,7 +3460,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .jumbotron > hr {
   border-top-color: #d5d5d5;
 }
-.container .jumbotron {
+.container .jumbotron,
+.container-fluid .jumbotron {
   border-radius: 6px;
 }
 .jumbotron .container {
@@ -3944,6 +3945,9 @@ body {
 .navbar-wrapper .navbar-wrapper .navbar .container {
   width: auto;
 }
+.navbar-brand {
+  padding: 3px 15px;
+}
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 /* Carousel base class */
@@ -3987,6 +3991,10 @@ body {
   background-color: #5a5a5a;
   padding-top: 15px;
   padding-bottom: 15px;
+  color: #fff;
+}
+.wrapfooter a {
+  color: #fff;
 }
 /* RESPONSIVE CSS
 -------------------------------------------------- */
