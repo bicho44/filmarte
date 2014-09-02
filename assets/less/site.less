@@ -1,12 +1,7 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 
-/* Padding below the footer and lighter body text */
 
-body {
-    //padding-bottom: 40px;
-    color: #5a5a5a;
-}
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -25,9 +20,16 @@ body {
     .navbar {
         padding-right: 15px;
         padding-left: 15px;
+
+      li { border-bottom: 2px solid ;}
+      .contenidotv { border-bottom-color: @rojo; }
+      .agencia { border-bottom-color: @amarillo; }
+      .eventos { border-bottom-color: @verde; }
+      .quienes { border-bottom-color: @celeste; }
+      .contacto { border-bottom-color: @azul; }
     }
     .navbar-wrapper .navbar .container {
-        width: auto;
+      width: auto;
     }
 }
 .navbar-brand {
@@ -39,13 +41,14 @@ body {
 -------------------------------------------------- */
 
 /* Carousel base class */
+@carousel-height:500px;
 
 .carousel {
-    height: 500px;
+    height: @carousel-height;
     margin-bottom: 60px;
     .item {
-        height: 500px;
-        background-color: #777;
+        height: @carousel-height;
+        background-color: #000;
     }
     /* Declare heights because of positioning of img element */
     .carousel-inner > .item > img {
@@ -53,13 +56,32 @@ body {
         top: 0;
         left: 0;
         min-width: 100%;
-        height: 500px;
+        height: @carousel-height;
     }
 }
 /* Since positioning the image, we need to help out the caption */
 
 .carousel-caption {
     z-index: 10;
+}
+
+.carousel-control {
+  // Toggles
+  .icon-chevron-left,
+  .icon-chevron-right {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    display: inline-block;
+  }
+  .icon-chevron-left {
+    left: 50%;
+    margin-left: -10px;
+  }
+  .icon-chevron-right {
+    right: 50%;
+    margin-right: -10px;
+  }
 }
 /* MARKETING CONTENT
 -------------------------------------------------- */
@@ -70,32 +92,62 @@ body {
     .col-lg-4 {
         margin-bottom: 20px;
         text-align: center;
+      p {
+        margin-right: 10px;
+        margin-left: 10px;
+      }
     }
     h2 {
         font-weight: normal;
     }
-    .col-lg-4 p {
-        margin-right: 10px;
-        margin-left: 10px;
+}
+.destacado {
+  .thumbnail {
+    padding: 0;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    .page-header{
+      margin: 20px 0 20px;
     }
+    .caption {
+      padding: 0 20px;
+      color: #FFFFFF;
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      right: 5%;
+//      margin-left: 20px;
+//      margin-right: 20px;
+      background-color: rgba(0, 0, 0, .7);
+    }
+  }
 }
 
 /* Footer 
 -------------------------------------------------- */
 .wrapfooter {
-    background-color: #5a5a5a;
+    background-color: @gray-dark;
     padding-top: 15px;
     padding-bottom: 15px;
     color:#fff;
-    a { color:#fff;}
+    border-top: 1px solid @gray-darker;
+
+    a { color: @gray-darker;
+      &:hover{color: @gray;}
+    }
+    .copyright {
+      color:@gray-darker;
+      font-size: @font-size-small;
+      text-align: center;
+    }
 }
-
-
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
-@media (min-width: 768px) {
+@media (min-width: @screen-sm) {
     /* Navbar positioning foo */
     .navbar-wrapper {
         margin-top: 20px;
@@ -121,8 +173,17 @@ body {
     .featurette-heading {
         font-size: 50px;
     }
+
+  .destacado {
+    .thumbnail {
+      .caption {
+        bottom: 20px;
+      }
+    }
+  }
 }
-@media (min-width: 992px) {
+
+@media (min-width: @screen-md) {
     .featurette-heading {
         margin-top: 120px;
     }

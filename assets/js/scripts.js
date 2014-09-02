@@ -1,1 +1,1 @@
-// @codekit-prepend "transition.js", "carousel.js", "collapse.js", "dropdown.js"
+// @codekit-prepend "transition.js", "carousel.js", "dropdown.js", "collapse.js"
